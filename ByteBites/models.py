@@ -13,7 +13,7 @@ class Recipe(models.Model):
     prep_time = models.IntegerField()
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY)
     instructions = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    #image = models.ImageField(upload_to='images/')
     date_added = models.DateTimeField(auto_now_add=True)
 
 class Ingredient(models.Model):
