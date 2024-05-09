@@ -20,8 +20,8 @@ O website é um blog de receitas de cozinha, em que as receitas e postagens ser�
 
 ## Modelagem do Banco de Dados
 
-Para permitir a busca de receitas por ingrediente, precisamos de uma tabela de relacionamento de n para n `Recipe-ingr`. Esta tabela conterá informações sobre quais ingredientes são usados em cada receita junto com suas quantidades.
+para permitir a busca de receitas por ingrediente, precisamos de uma tabela de relacionamento de n para n `Recipe-ingr`. Esta tabela conterá informações sobre quais ingredientes são usados em cada receita junto com suas quantidades.
 
-Para os usuários poderem dar like/deslike em receitas e salvá-las para uso futuro, temos as tabelas `Like` e `Save`. A tabela `Like` contém informações sobre quais usuários deram like ou deslike em quais receitas ("like" é um atributo booleano). A tabela `Save` contém informações sobre quais usuários favoritaram quais receitas.
+Para os usuários poderem dar like/deslike em receitas e salvá-las para uso futuro, temos as tabelas A tabela `Like` e `Save`. A tabela `Like` contém informações sobre quais usuários deram like ou deslike em quais receitas. A tabela `Save` contém informações sobre quais usuários salvaram quais receitas.
 
 ![Modelo Lógico](modelo-logico.png)
