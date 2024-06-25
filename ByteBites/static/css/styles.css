@@ -1,0 +1,127 @@
+/* Formatting for blog post */
+body {
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    cursor: pointer;
+}
+.p {
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol”
+
+  }
+
+  .blog-header-logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1d6cc1;
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol”
+
+  }
+
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/static/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+      url('/static/fonts/SpaceGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Space Grotesk', monospace;
+  }
+.blog-header-logo{
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1d6cc1;
+    font-family: "Space Grotesk", monospace;
+}
+@font-face {
+font-family: 'Space Grotesk';
+src: url('/static/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+ url('/static/fonts/SpaceGrotesk-Regular.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+  
+.blog-post {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Formatting for recipe posts page */
+.recipe-post {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.recipe-post h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.recipe-post p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.recipe-post .ingredients {
+    margin-bottom: 10px;
+}
+
+.recipe-post .instructions {
+    margin-top: 20px;
+}
+
+/* Formatting for recipe-unrelated posts */
+.unrelated-post {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/*   ------  */
+.post-it-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.post-it {
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0.1px 0.1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #1d6cc1;
+    transition: transform 0.3s;
+    cursor: pointer;
+    transform: scale(1);
+    word-wrap: break-word;
+}
+
+.post-it:hover {
+    transform: scale(1.1);
+}
+.pixel {
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+}

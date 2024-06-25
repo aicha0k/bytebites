@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div class="col-md-8">
+        <article class="blog-post">
+            <h1 class="display-5 link-body-emphasis mb-2">Sample blog post</h1>
+            <p class="blog-post-meta">{{ recipe.date_added }} by Aicha</p>
+
+            <p>Descricao {{recipe.description }}</p>
+            <p>Preparo {{recipe.preparation_time }}</p>
+            <p> Porcoes: {{ recipe.servings }} Porcoes</p>
+            <p> Dificuldade: {{ recipe.difficulty }}</p>
+            <hr>
+            <p>This is some additional paragraph placeholder content. It has been written to fill the available space
+                and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+                demonstration flowing, so be on the lookout for this exact same string of text.</p>
+            <h2>Blockquotes</h2>
+            <p>This is an example blockquote in action:</p>
+            <blockquote class="blockquote">
+                <p>Quoted text goes here.</p>
+            </blockquote>
+            <h3>Ingredientes</h3>
+            <ul>
+                {% for ingredient in recipe.ingredients.all %}
+                <li>{{ ingredient.quant }} {{ingredient.unit}} {{ingredient.ingredient_name}}</li>
+                {% endfor %}
+            </ul>
+            <h3>Instruções</h3>
+            <ol>
+                {% for instruction in recipe.instructions %}
+                <li>{{ instruction }}</li>
+                {% endfor %}
+            </ol>
+        </article>
+    </div>
+</body>
+
+</html>
+</body>
+
+</html>
+{% endblock %}

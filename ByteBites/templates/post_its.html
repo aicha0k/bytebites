@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <h1 class="p-3 ">Post-Its</h1>
+        <div>
+            <p></p>
+            {% for post_it in my_posts %}
+                <div class="col-md-4 mb-3 post-it">
+                    <h2>{{ post_it.title }}</h2>
+                    <p>{{ post_it.content }}</p>
+                    <p>{{ post_it.created_on }}</p>
+                </div>
+            {% endfor %}
+        </div>
+</body>
+
+
+{% endblock %}

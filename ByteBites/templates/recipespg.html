@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron text-center p-2 mb-2">
+    <div class="container">
+      <h1>Hello, world!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a
+        jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+      </p>
+      <p><a class="btn btn-secondary btn-md pixel" href="#" role="button">Learn more</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      {% for recipe in recipes %}
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <h2 class="card-title p-3 mt-2"><a href="{% url 'recipe'%}"></a>{{ recipe.name }}</h2>
+          <div class="card-body">
+            <p class="card-text">{{ recipe.description }}</p>
+            <div class="d-flex justify-content-center">
+              <div class="container">
+                <a class="text-muted"> 23<i class="bi bi-hand-thumbs-up"></i> </a>
+                <a class="text-muted">322 <i class="bi bi-hand-thumbs-down"></i></a>
+              </div>
+              <small class="text-muted align-self-center">blop dias atras</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
