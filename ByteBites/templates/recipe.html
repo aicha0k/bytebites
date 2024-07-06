@@ -7,7 +7,6 @@
         <article class="blog-post">
             <h1 class="display-5 link-body-emphasis mb-2">Sample blog post</h1>
             <p class="blog-post-meta">{{ recipe.date_added }} by Aicha</p>
-
             <p>Descricao {{recipe.description }}</p>
             <p>Preparo {{recipe.preparation_time }}</p>
             <p> Porcoes: {{ recipe.servings }} Porcoes</p>
@@ -33,12 +32,33 @@
                 <li>{{ instruction }}</li>
                 {% endfor %}
             </ol>
+            <div class="d-flex justify-content-center">
+                <button id="like-btn" class="btn btn-primary">Like ({{ recipe.likes }})</button>
+                <button id="dislike-btn" class="btn btn-primary">Dislike ({{ recipe.dislikes_count }})</button>
+            </div>
         </article>
     </div>
 </body>
 
 </html>
+<script>
+
+document.getElementById('like-btn').addEventListener('click', function() {
+        fetch("{% url 'like_recipe' recipe.id %}", {method: 'POST'})
+        .then(response => response.json()).then(data => {
+                document.getElementById('like-btn').innerText = 'Like (' + data.likes + ')';
+    });
+});
+document.getElementById('dislike-btn').addEventListener('click', function() {
+    fetch("{% url 'dislike_recipe' recipe.id %}", {method: 'POST'})
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('dislike-btn').innerText = 'Dislike (' + data.dislikes_count + ')';
+    });
+});
+</script>
 </body>
 
 </html>
+
 {% endblock %}

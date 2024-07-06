@@ -32,7 +32,7 @@ class Ingredient(models.Model):
         return self.name
 
 class RecipeIngredient(models.Model):
-    quant = models.CharField(max_length=30)
+    quant = models.CharField(max_length=30, blank=True)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     unit = models.CharField(max_length=40, blank=True)
@@ -46,9 +46,12 @@ class User(models.Model):
     password = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     date_reg = models.DateTimeField(auto_now_add=True)
-
     def __str__(self):
         return self.username
+    
+    def save(self, *args, **kwargs):
+        self.password = self.password
+        super(User, self).save(*args, **kwargs)
 
 class Likes(models.Model):  # user can like or dislike a recipe
     user = models.ForeignKey(User, on_delete=models.CASCADE)

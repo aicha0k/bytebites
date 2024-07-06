@@ -13,19 +13,19 @@
       <p><a class="btn btn-secondary btn-md pixel" href="#" role="button">Learn more</a></p>
     </div>
   </div>
-
   <div class="container">
-
     <div class="row">
-      {% for recipe in recipes %}
+      {% for recipe in recipes_pg %}
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <h2 class="card-title p-3 mt-2"><a href="{% url 'recipe'%}"></a>{{ recipe.name }}</h2>
+          <h2 class="card-title p-3 mt-2"><a href="{% url 'get_recipe' recipe_id=recipe.id %}">{{ recipe.name }}</a>
+          </h2>
+          <!-- tenho que passar a recipe.id-->
           <div class="card-body">
-            <p class="card-text">{{ recipe.description }}</p>
+            <p class="card-text">{{ recipe.description|truncatechars:100 }}</p>
             <div class="d-flex justify-content-center">
               <div class="container">
-                <a class="text-muted"> 23<i class="bi bi-hand-thumbs-up"></i> </a>
+                <a class="text-muted"> {{recipe.likes}}<i class="bi bi-hand-thumbs-up"></i> </a>
                 <a class="text-muted">322 <i class="bi bi-hand-thumbs-down"></i></a>
               </div>
               <small class="text-muted align-self-center">blop dias atras</small>
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-
+      {% endfor %}
     </div>
   </div>
 </main>
